@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="515.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="mp3_player_java.FXMLDocumentController">
+   <children>
+      <VBox layoutY="-95.0" prefHeight="515.0" prefWidth="782.0" style="-fx-background-color: CBD0D4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="271.0" fitWidth="785.0" pickOnBounds="true" smooth="false">
+               <image>
+                  <Image url="@img/Ronol.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="label" alignment="CENTER" prefHeight="161.0" prefWidth="793.0" style="-fx-background-color: black;" text="MP3 Player" textFill="#0d972d">
+               <font>
+                  <Font name="System Italic" size="36.0" />
+               </font>
+            </Label>
+            <Slider fx:id="progress_slider" prefHeight="39.0" prefWidth="782.0">
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <Glow />
+               </effect></Slider>
+            <HBox prefHeight="63.0" prefWidth="782.0">
+               <children>
+                  <Button fx:id="playbutton" mnemonicParsing="false" onAction="#play" prefHeight="48.0" prefWidth="94.0" text="Play" wrapText="true">
+                     <font>
+                        <Font name="Georgia Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="pausebutton" mnemonicParsing="false" onAction="#pause" prefHeight="48.0" prefWidth="94.0" text="Pause" wrapText="true">
+                     <font>
+                        <Font name="Georgia Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="resetbutton" mnemonicParsing="false" onAction="#reset_player" prefHeight="48.0" prefWidth="94.0" text="Reset" wrapText="true">
+                     <font>
+                        <Font name="Georgia Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="previousbutton" mnemonicParsing="false" onAction="#play_previous" prefHeight="48.0" prefWidth="122.0" text="Previous" wrapText="true">
+                     <font>
+                        <Font name="Georgia Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="nextbutton" mnemonicParsing="false" onAction="#play_next" prefHeight="48.0" prefWidth="94.0" text="Next" wrapText="true">
+                     <font>
+                        <Font name="Georgia Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="file_chooser" mnemonicParsing="false" onAction="#openFileChooser" prefHeight="48.0" prefWidth="140.0" text="Add Songs" wrapText="true">
+                     <font>
+                        <Font name="Georgia Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <ComboBox fx:id="speedbox" onAction="#changeSpeed" prefHeight="48.0" prefWidth="87.0" promptText="Speed" />
+                  <AnchorPane prefHeight="49.0" prefWidth="122.0">
+                     <children>
+                        <Slider fx:id="volumeslider" layoutY="13.0" prefHeight="24.0" prefWidth="140.0" value="50.0">
+                           <cursor>
+                              <Cursor fx:constant="CLOSED_HAND" />
+                           </cursor>
+                           <effect>
+                              <ColorAdjust brightness="-0.64" contrast="-0.26" hue="-0.27" saturation="-0.64" />
+                           </effect></Slider>
+                     </children>
+                     <effect>
+                        <Bloom />
+                     </effect>
+                  </AnchorPane>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
