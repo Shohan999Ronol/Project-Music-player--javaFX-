@@ -27,7 +27,7 @@ Contributions to this project are welcome. If you encounter any issues or have s
 Here is the music player download link: https://drive.google.com/file/d/1llO-X2seyjdykCPOTPeJuzePvHfMQF_S/view?usp=sharing
 
 
-# Thank you for using this Music Player application! Enjoy your music experience!
+## Thank you for using this Music Player application! Enjoy your music experience!
 
 
 # Contact
