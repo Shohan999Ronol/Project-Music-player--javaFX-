@@ -23,7 +23,7 @@ Use the provided keyboard shortcuts to control the music player.
 Contributing
 Contributions to this project are welcome. If you encounter any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request on the GitHub repository.
 
-# DEMO:
+# Installer:
 Here is the music player download link: https://drive.google.com/file/d/1llO-X2seyjdykCPOTPeJuzePvHfMQF_S/view?usp=sharing
 
 
