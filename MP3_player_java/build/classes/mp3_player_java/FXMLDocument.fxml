@@ -71,7 +71,7 @@
                   <ComboBox fx:id="speedbox" onAction="#changeSpeed" prefHeight="48.0" prefWidth="87.0" promptText="Speed" />
                   <AnchorPane prefHeight="49.0" prefWidth="122.0">
                      <children>
-                        <Slider fx:id="volumeslider" layoutY="13.0" prefHeight="24.0" prefWidth="140.0" value="50.0">
+                        <Slider fx:id="volumeslider" layoutY="2.0" prefHeight="24.0" prefWidth="140.0" value="50.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="13.0">
                            <cursor>
                               <Cursor fx:constant="CLOSED_HAND" />
                            </cursor>

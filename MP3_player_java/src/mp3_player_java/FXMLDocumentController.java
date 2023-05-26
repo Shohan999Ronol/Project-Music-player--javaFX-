@@ -14,6 +14,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -85,6 +86,7 @@ public class FXMLDocumentController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
                 mediaPlayer.setVolume(volumeslider.getValue() * 0.01);
+                volumeslider.getParent().requestFocus();
             }
         });
 
@@ -95,8 +97,10 @@ public class FXMLDocumentController implements Initializable {
                 double duration = media.getDuration().toSeconds();
                 double time = progress * duration;
                 mediaPlayer.seek(Duration.seconds(time));
+                progress_slider.getParent().requestFocus();
             }
         });
+        
 
     }
 
@@ -104,14 +108,19 @@ public class FXMLDocumentController implements Initializable {
     void pause() {
         cancelTimer();
         mediaPlayer.pause();
+        pausebutton.getParent().requestFocus();
     }
 
     @FXML
     void play() {
+        if(songs.isEmpty()){
+        openFileChooser();}
+        else{
         beginTimer();
         mediaPlayer.setVolume(volumeslider.getValue() * 0.01);
         mediaPlayer.play();
-    }
+        playbutton.getParent().requestFocus();
+    }}
 
     @FXML
     void play_next() {
@@ -123,6 +132,7 @@ public class FXMLDocumentController implements Initializable {
         cancelTimer();
         mediaPlayer.stop();
         playSelectedSong(songNumber);
+        nextbutton.getParent().requestFocus();
     }
 
     @FXML
@@ -135,12 +145,17 @@ public class FXMLDocumentController implements Initializable {
         cancelTimer();
         mediaPlayer.stop();
         playSelectedSong(songNumber);
+            
+        previousbutton.getParent().requestFocus();
+        
     }
 
     @FXML
     void reset_player() {
         progress_slider.setValue(0);
         mediaPlayer.seek(Duration.seconds(0));
+        resetbutton.getParent().requestFocus();
+        
     }
 
     @FXML
@@ -150,6 +165,7 @@ public class FXMLDocumentController implements Initializable {
         } else {
             mediaPlayer.setRate(Double.parseDouble(speedbox.getValue()));
         }
+        speedbox.getParent().requestFocus();
     }
 
     public void beginTimer() {
@@ -190,7 +206,56 @@ public class FXMLDocumentController implements Initializable {
             }
         });
     }
+    
+    
+    @FXML
+    public void skipForward() {
+        Duration currentTime = mediaPlayer.getCurrentTime();
+        Duration targetTime = currentTime.add(Duration.seconds(5));
+        mediaPlayer.seek(targetTime);
+        progress_slider.setValue(targetTime.toSeconds());
+        progress_slider.getParent().requestFocus();
+        
+    }
+    
+    
+    @FXML
+    public void skipBackward() {
+        Duration currentTime = mediaPlayer.getCurrentTime();
+        Duration targetTime = currentTime.subtract(Duration.seconds(5));
+        mediaPlayer.seek(targetTime);
+        progress_slider.setValue(targetTime.toSeconds());
+        progress_slider.getParent().requestFocus();
+    }
+    
+    
+    public void increaseVolume() {
+        double currentVolume = volumeslider.getValue()*0.01;
+        double newVolume = currentVolume + 0.01;
+        if (newVolume <=1) {
+            volumeslider.setValue(newVolume*100);
+            mediaPlayer.setVolume(newVolume);
+            volumeslider.getParent().requestFocus();
 
+        }
+        volumeslider.getParent().requestFocus();
+    }
+
+    public void decreaseVolume() {
+        double currentVolume = volumeslider.getValue()*0.01;
+        double newVolume = currentVolume - 0.01;
+        if (newVolume >= 0) {
+            volumeslider.setValue(newVolume*100);
+            mediaPlayer.setVolume(newVolume);
+            volumeslider.getParent().requestFocus();
+
+        }
+        volumeslider.getParent().requestFocus();
+    }
+    
+    
+    
+    
     public void cancelTimer() {
         running = false;
         if (timer != null) {
@@ -213,6 +278,7 @@ public class FXMLDocumentController implements Initializable {
 
         // Show the file chooser dialog
         List<File> selectedFiles = fileChooser.showOpenMultipleDialog(new Stage());
+           
 
         if (selectedFiles != null && !selectedFiles.isEmpty()) {
             
@@ -231,8 +297,12 @@ public class FXMLDocumentController implements Initializable {
 
             // Play the first selected song
             songNumber = 0;
+            
+            file_chooser.getParent().requestFocus();
             playSelectedSong(songNumber);
+          
         }
+        file_chooser.getParent().requestFocus();
     }
 
     private void playSelectedSong(int songNumber) {
