@@ -23,10 +23,10 @@ Use the provided keyboard shortcuts to control the music player.
 Contributing
 Contributions to this project are welcome. If you encounter any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request on the GitHub repository.
 
-# Application:
+# Application
 Here is the music player download link: [Download](https://drive.google.com/file/d/1llO-X2seyjdykCPOTPeJuzePvHfMQF_S/view?usp=sharing)
 
-#Screen-Shots (Demo):
+# Screen-Shots (Demo)
 
 ![image](https://github.com/Shohan999Ronol/Project-Music-player--javaFX-/assets/106506181/ecf554ec-1056-4755-8aa8-8bdad19b5d70)
 
