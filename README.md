@@ -2,9 +2,9 @@
 
 # Overview
 
-This Music Player project is a fun JavaFX application developed by Shohan Islam Joy (nickname: Ronol) for learning purposes. The application allows you to play, pause, skip forward and backward, adjust volume, and add songs to the playlist.
+This Music Player project is a fun JavaFX application developed by Shohan Islam Joy (nickname: Ronol) for learning purposes. The application allows you to play, pause, skip forward and backward, adjust the volume, and add songs to the playlist.
 
-# eatures
+# Features
 
 Play/pause functionality: Press the Space key to play or pause the currently playing song.
 Next song: Press the 'n' key to skip to the next song in the playlist.
