@@ -29,7 +29,6 @@ Here is the music player download link: [Download](https://drive.google.com/file
 #Screen-Shots (Demo):
 
 ![image](https://github.com/Shohan999Ronol/Project-Music-player--javaFX-/assets/106506181/ecf554ec-1056-4755-8aa8-8bdad19b5d70)
-![image](https://github.com/Shohan999Ronol/Project-Music-player--javaFX-/assets/106506181/89975446-a282-4f55-a65c-8eb1b477e4e5)
 
 
 ## Thank you for using this Music Player application! Enjoy your music experience!
