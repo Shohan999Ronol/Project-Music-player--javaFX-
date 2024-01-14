@@ -1,4 +1,4 @@
-# Project Music player (javaFX)
+# Project Music player (JavaFX)
 
 # Overview
 
@@ -18,7 +18,7 @@ Add songs: Press the 'o' key to add songs to the playlist.
 
 # Usage
 
-Clone the repository from https://github.com/Shohan999Ronol.
+Clone the repository from https://github.com/shohanislamjoy.
 Use the provided keyboard shortcuts to control the music player.
 Contributing
 Contributions to this project are welcome. If you encounter any issues or have suggestions for improvement, please feel free to open an issue or submit a pull request on the GitHub repository.
@@ -35,7 +35,7 @@ Contributions to this project are welcome. If you encounter any issues or have s
 
 
 # Contact
-You can reach out to the developer, Shohan Islam Joy (Ronol), via GitHub: https://github.com/Shohan999Ronol
+### If You face any problems with can reach out [via GitHub](https://github.com/shohanislamjoy) will try my best to help.
 
 
 
